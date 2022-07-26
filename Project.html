@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="search-form">
+        <div class="row">
+          <div class="col-8">
+            <div class="mb-3">
+              <input
+                type="text"
+                placeholder="Enter your city"
+                class="form-control"
+                id="cityForm"
+              />
+            </div>
+          </div>
+          <div class="col-2">
+            <button type="submit" class="btn btn-primary" id="btnSearch">
+              Search
+            </button>
+          </div>
+          <div class="col-2">
+            <button type="button" class="btn btn-primary" id="btnLocation">
+              Use your location
+            </button>
+          </div>
+        </div>
+      </form>
+      <br />
+      <h1><div id="city">Paris</div></h1>
+      <h2><div id="day-and-time"></div></h2>
+      <div class="card" style="width: 22rem">
+        <div class="card-body">
+          <h3>🌤</h3>
+          <h4>
+            <span id="currentTemp">19</span
+            ><span class="units"
+              ><a href="#" id="celsius-link">°C</a> /
+              <a href="#" id="fahrenheit-link">°F</a></span
+            >
+          </h4>
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <div class="row">
+        <div class="col-2">
+          <p>Thu</p>
+          <div class="element">
+            <div class="icon">⛈</div>
+            <div class="temp">17°C</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <p>Fri</p>
+          <div class="element">
+            <div class="icon">☀️</div>
+            <div class="temp">22°C</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <p>Sat</p>
+          <div class="element">
+            <div class="icon">☁️</div>
+            <div class="temp">20°C</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <p>Sun</p>
+          <div class="element">
+            <div class="icon">🌧</div>
+            <div class="temp">19°C</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <p>Mon</p>
+          <div class="element">
+            <div class="icon">☀️</div>
+            <div class="temp">23°C</div>
+          </div>
+        </div>
+        <div class="col-2">
+          <p>Tue</p>
+          <div class="element">
+            <div class="icon">🌤</div>
+            <div class="temp">22°C</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>Coded by Alisa Konyk</footer>
+    <script src="src/index.js"></script>
+  </body>
+</html>

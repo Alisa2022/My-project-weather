@@ -1,0 +1,65 @@
+body {
+  margin-top: 70px;
+  margin-left: 70px;
+  background: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+}
+h1,
+h2 {
+  margin-left: 200px;
+}
+h1 {
+  font-weight: 700;
+  font-size: 70px;
+}
+h2 {
+  font-weight: 400;
+  font-size: 25px;
+}
+h3 {
+  font-size: 80px;
+}
+h4 {
+  font-size: 70px;
+}
+p {
+  font-size: 24px;
+  margin-left: -5px;
+}
+footer {
+  margin-top: 20px;
+  margin-right: 50px;
+  text-align: right;
+  font-weight: lighter;
+  font-family: "Gill Sans", sans-serif;
+}
+.mb-3 {
+  margin-left: 100px;
+}
+.card {
+  margin-left: 200px;
+  border: 2px solid rgb(135, 11, 188);
+}
+.element {
+  border-radius: 50%;
+  background-color: white;
+  width: 130px;
+  height: 130px;
+  margin-left: -50px;
+  border: 2px solid rgb(135, 11, 188);
+}
+.icon {
+  font-size: 60px;
+  margin-left: 30px;
+}
+.temp {
+  font-size: 24px;
+  margin-left: 40px;
+}
+.units {
+  font-size: 22px;
+  position: relative;
+  top: -32px;
+}
+a {
+  text-decoration: none;
+}
