@@ -22,21 +22,32 @@ function formatDate() {
 let dayAndTime = document.querySelector("#day-and-time");
 dayAndTime.innerHTML = formatDate();
 
-function getCity(event) {
+function displayWeather(response) {
+  document.querySelector("#city").innerHTML = response.data.name;
+  document.querySelector("#temperature").innerHTML = Math.round(
+    response.data.main.temp
+  );
+}
+
+function searchCity(city) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=f4db6aa7e5cfe4049fcbfe96c0455ba9&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+}
+
+function handleSubmit(event) {
   event.preventDefault();
-  let cityForm = document.querySelector("#cityForm");
-  let city = document.querySelector("#city");
-  city.innerHTML = `${cityForm.value}`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityForm.value}&appid=f4db6aa7e5cfe4049fcbfe96c0455ba9&units=metric`;
-  axios.get(apiUrl).then(showTemperature);
+  let city = document.querySelector("#cityForm").value;
+  searchCity(city);
 }
 
 let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", getCity);
+searchForm.addEventListener("submit", handleSubmit);
+
+searchCity("Paris");
 
 function showFahrenheit(event) {
   event.preventDefault();
-  let currentTemp = document.querySelector("#currentTemp");
+  let currentTemp = document.querySelector("#temperature");
   currentTemp.innerHTML = "66";
 }
 let clickFahrenheit = document.querySelector("#fahrenheit-link");
@@ -44,17 +55,12 @@ clickFahrenheit.addEventListener("click", showFahrenheit);
 
 function showCelsius(event) {
   event.preventDefault();
-  let currentTemp = document.querySelector("#currentTemp");
+  let currentTemp = document.querySelector("#temperature");
   currentTemp.innerHTML = "19";
 }
 let clickCelsius = document.querySelector("#celsius-link");
 clickCelsius.addEventListener("click", showCelsius);
 
-function showTemperature(response) {
-  let showTemp = Math.round(response.data.main.temp);
-  let currentTemp = document.querySelector("#currentTemp");
-  currentTemp.innerHTML = `${showTemp}`;
-}
 document.querySelector("#btnLocation").addEventListener("click", function () {
   function showPosition(position) {
     let lat = position.coords.latitude;
@@ -68,7 +74,7 @@ document.querySelector("#btnLocation").addEventListener("click", function () {
   function showTemperatureGps(response) {
     let currentTempGps = Math.round(response.data.main.temp);
     let currentCity = response.data.name;
-    currentTemp.innerHTML = `${currentTempGps}`;
+    temperature.innerHTML = `${currentTempGps}`;
     city.innerHTML = `${currentCity}`;
   }
 });
