@@ -28,7 +28,8 @@ p {
 footer {
   margin-top: 20px;
   margin-right: 50px;
-  text-align: right;
+  margin-bottom: 10px;
+  text-align: left;
   font-weight: lighter;
   font-family: "Gill Sans", sans-serif;
 }
