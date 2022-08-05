@@ -21,6 +21,9 @@ h3 {
 h4 {
   font-size: 70px;
 }
+h5 {
+  color: grey;
+}
 p {
   font-size: 24px;
   margin-left: -5px;
@@ -32,6 +35,9 @@ footer {
   text-align: left;
   font-weight: lighter;
   font-family: "Gill Sans", sans-serif;
+}
+h5:first-letter {
+  text-transform: capitalize;
 }
 .mb-3 {
   margin-left: 100px;

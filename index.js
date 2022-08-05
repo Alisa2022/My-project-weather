@@ -27,6 +27,11 @@ function displayWeather(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
 }
 
 function searchCity(city) {
@@ -66,15 +71,8 @@ document.querySelector("#btnLocation").addEventListener("click", function () {
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
     let apiUrlLocation = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f4db6aa7e5cfe4049fcbfe96c0455ba9&units=metric`;
-    axios.get(apiUrlLocation).then(showTemperatureGps);
+    axios.get(apiUrlLocation).then(displayWeather);
   }
 
   navigator.geolocation.getCurrentPosition(showPosition);
-
-  function showTemperatureGps(response) {
-    let currentTempGps = Math.round(response.data.main.temp);
-    let currentCity = response.data.name;
-    temperature.innerHTML = `${currentTempGps}`;
-    city.innerHTML = `${currentCity}`;
-  }
 });
