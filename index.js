@@ -33,6 +33,8 @@ function displayWeather(response) {
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
 
+  celsiusTemperature = response.data.main.temp;
+
   let icon = document.querySelector("#icon");
   icon.setAttribute(
     "src",
@@ -51,27 +53,6 @@ function handleSubmit(event) {
   searchCity(city);
 }
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", handleSubmit);
-
-searchCity("Paris");
-
-function showFahrenheit(event) {
-  event.preventDefault();
-  let currentTemp = document.querySelector("#temperature");
-  currentTemp.innerHTML = "66";
-}
-let clickFahrenheit = document.querySelector("#fahrenheit-link");
-clickFahrenheit.addEventListener("click", showFahrenheit);
-
-function showCelsius(event) {
-  event.preventDefault();
-  let currentTemp = document.querySelector("#temperature");
-  currentTemp.innerHTML = "19";
-}
-let clickCelsius = document.querySelector("#celsius-link");
-clickCelsius.addEventListener("click", showCelsius);
-
 document.querySelector("#btnLocation").addEventListener("click", function () {
   function showPosition(position) {
     let lat = position.coords.latitude;
@@ -82,3 +63,29 @@ document.querySelector("#btnLocation").addEventListener("click", function () {
 
   navigator.geolocation.getCurrentPosition(showPosition);
 });
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+searchCity("Paris");

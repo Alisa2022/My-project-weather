@@ -42,6 +42,7 @@ h4:first-letter {
 .card {
   margin-left: 200px;
   border: 2px solid rgb(135, 11, 188);
+  background-color: #f1f2f8;
 }
 .element {
   border-radius: 50%;
