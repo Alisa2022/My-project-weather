@@ -44,11 +44,9 @@ function displayForecast(response) {
       <div class="col-2">
         <p>${formatDay(forecastDay.dt)}</p>
         <div class="element">
-          <img src="http://openweathermap.org/img/wn/${
+          <img class="picture" src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
-          }@2x.png"
-          alt=""
-          width="80" />
+          }@2x.png" />
           
           <div class="temp">${Math.round(forecastDay.temp.max)}°C</div>
         </div>

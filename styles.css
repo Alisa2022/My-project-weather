@@ -42,11 +42,11 @@ h4:first-letter {
 .card {
   margin-left: 200px;
   border: 2px solid rgb(135, 11, 188);
-  background-color: #f1f2f8;
+  background-color: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
 }
 .element {
   border-radius: 50%;
-  background-color: white;
+  background-color: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
   width: 130px;
   height: 130px;
   margin-left: -50px;
@@ -65,6 +65,11 @@ h4:first-letter {
   position: relative;
   top: -32px;
 }
+.picture {
+  width: 110px;
+  padding-left: 22px;
+}
+
 a {
   text-decoration: none;
 }
