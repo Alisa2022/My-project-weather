@@ -49,7 +49,7 @@ h4:first-letter {
   background-color: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
   width: 115px;
   height: 115px;
-  margin-left: -50px;
+  margin-left: -45px;
   border: 2px solid rgb(135, 11, 188);
 }
 .icon {
@@ -69,7 +69,11 @@ h4:first-letter {
   width: 90px;
   padding-left: 20px;
 }
-
+#btnSearch,
+#btnLocation {
+  background-color: #8828bc;
+  border-color: grey;
+}
 a {
   text-decoration: none;
 }
